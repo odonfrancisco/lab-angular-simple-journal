@@ -1,4 +1,5 @@
-<div *ngFor="let entry of entries">
+<div *ngFor="let entry of entries" (click)="redirect(entry._id)">
   {{entry.title}}
   {{entry.date}}
 </div>
+<app-entry-form></app-entry-form>

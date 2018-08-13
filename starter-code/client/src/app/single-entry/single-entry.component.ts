@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RetrieveEntriesService } from '../services/retrieve-entries.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-single-entry',
@@ -11,7 +11,8 @@ export class SingleEntryComponent implements OnInit {
   entry: any;
 
   constructor(private receiveEntries: RetrieveEntriesService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -21,6 +22,10 @@ export class SingleEntryComponent implements OnInit {
       .subscribe(entry => {
         this.entry = entry
       })
+  }
+
+  home(){
+    this.router.navigate([''])
   }
 
 }

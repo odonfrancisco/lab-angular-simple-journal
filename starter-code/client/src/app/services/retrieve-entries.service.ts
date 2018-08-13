@@ -21,5 +21,11 @@ export class RetrieveEntriesService {
       map(res => res.json())
     )
   }
+
+  submitEntry(form){
+    return this.http.post('http://localhost:3000/api/journal-entries', form).pipe(
+      map(res => res.json())
+    )
+  }
   
 }

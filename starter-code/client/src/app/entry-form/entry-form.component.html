@@ -1,0 +1,10 @@
+<input [ngStyle]="formBtn" type="button" value="Submit New Entry" (click)="showForm()">
+
+<form [ngStyle]="formHide" #form="ngForm" (ngSubmit)="submitEntry(form)">
+  <input type="text" placeholder="Title" name="title" ngModel>
+
+  <input type="text" placeholder="Content" name="content" ngModel>
+
+  <input type="submit" value="Submit Entry">
+
+</form>
